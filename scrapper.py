@@ -24,7 +24,10 @@ class NewsScraper:
         self.news_list = []
         self.search = search
         self.sections = sections
-        self.months = months
+        if not months:
+            self.months = 1
+        else:
+            self.months = months
         self.files = Files()
         self.archive = Archive()
         self.request = HTTP()
