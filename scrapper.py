@@ -65,7 +65,7 @@ class NewsScraper:
             self.browser.click_element_when_clickable('//label[text()="Section"]')
             for section in self.sections:
                 try:
-                    self.browser.click_element_if_visible(f'//label[text()="{section}"]')
+                    self.browser.click_element_if_visible(f'//span[text()="{section}"]//..//input')
                 except AssertionError and ElementNotFound:
                     pass
 
