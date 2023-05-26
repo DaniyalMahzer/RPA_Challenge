@@ -12,6 +12,7 @@ if env == 'cloud':
     wi = WorkItems()
     wi.get_input_work_item()
     payload = wi.get_work_item_payload()
+    print(payload)
     sections = payload.get('sections')
     months = payload.get('months', 0)
     search_phrase = payload.get('search', '')
