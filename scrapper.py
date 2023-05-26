@@ -86,6 +86,11 @@ class NewsScraper:
         self.browser.press_keys('//input[@data-testid="DateRange-endDate"]', 'RETURN')
 
     def get_news(self):
+        try:
+            self.browser.find_element('//button[contains(text(),"Accept")]')
+            self.browser.click_element_when_visible('//button[contains(text(),"Accept")]')
+        except AssertionError:
+            pass
         show_more = True
         while show_more:
             try:
